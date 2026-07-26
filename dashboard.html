@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — Expense Traker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <a href="index.html" class="logo">Expense<span class="dot">•</span>Tracker</a>
+    <nav class="side-links">
+      <a href="dashboard.html" class="active">📊 <span class="label">Dashboard</span></a>
+      <a href="#" id="logoutBtn">🚪 <span class="label">Log Out</span></a>
+    </nav>
+    <p class="side-user" id="userLabel"></p>
+  </aside>
+
+  <main class="main">
+    <div class="main-head">
+      <h1 id="greeting">Your Dashboard</h1>
+      <div class="action-row">
+        <button class="btn-add btn-income" id="openIncome">➕ Add Income</button>
+        <button class="btn-add btn-expense" id="openExpense">➖ Add Expense</button>
+      </div>
+    </div>
+
+    <div class="dash-stats">
+      <div class="stat-card"><span class="eyebrow">Total Balance</span><div class="val" id="statBalance">₹0</div></div>
+      <div class="stat-card"><span class="eyebrow">Income</span><div class="val" id="statIncome" style="color:var(--income)">₹0</div></div>
+      <div class="stat-card"><span class="eyebrow">Expenses</span><div class="val" id="statExpenses" style="color:var(--expense)">₹0</div></div>
+      <div class="stat-card"><span class="eyebrow">Savings</span><div class="val" id="statSavings">₹0</div></div>
+    </div>
+<div class="table-card chart-card">
+  <h3>Expense Distribution</h3>
+  <div class="chart-row">
+    <div class="pie-chart" id="pieVisual"></div>
+    <div class="legend" id="chartLegend"></div>
+  </div>
+</div>    
+
+    <div class="table-card">
+      <table>
+        <thead>
+          <tr><th>Date</th><th>Category</th><th>Amount</th><th>Action</th></tr>
+        </thead>
+        <tbody id="txBody">
+          <!-- rows injected by script.js -->
+        </tbody>
+      </table>
+      <div class="empty-state" id="emptyState" style="display:none;">No transactions yet — add your first income or expense.</div>
+    </div>
+  </main>
+</div>
+
+<!-- Add / Edit Transaction Modal -->
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal">
+    <h3 id="modalTitle">Add Expense</h3>
+    <form id="txForm">
+      <input type="hidden" id="txId">
+      <input type="hidden" id="txType">
+      <div class="field">
+        <label for="txDate">Date</label>
+        <input type="date" id="txDate" required>
+      </div>
+      <div class="field">
+        <label for="txCategory">Category</label>
+        <select id="txCategory" required>
+          <option value="Food">🍔 Food</option>
+          <option value="Travel">🚗 Travel</option>
+          <option value="Shopping">🛒 Shopping</option>
+          <option value="Bills">💡 Bills</option>
+          <option value="Entertainment">🎉 Entertainment</option>
+          <option value="Health">🏥 Health</option>
+          <option value="Education">📚 Education</option>
+          <option value="Income">💼 Income</option>
+          <option value="Others">➕ Add New Category</option>
+        </select>
+        <div id="customCategoryBox" style="display:none; margin-top:12px;">
+            <label for="customCategory">Custom Category</label>
+            <input
+                type="text"
+                id="customCategory"
+                placeholder="e.g. Pet Care, Fuel, Rent"
+            >
+        </div>
+      </div>
+      <div class="field">
+        <label for="txAmount">Amount (₹)</label>
+        <input type="number" id="txAmount" required min="0" step="0.01">
+      </div>
+      <div class="field">
+        <label for="txNote">Note (optional)</label>
+        <input type="text" id="txNote" placeholder="e.g. Lunch with team">
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-ghost" id="cancelModal">Cancel</button>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="config.js"></script>
+<script src="script.js"></script>
+<script>initDashboard();</script>
+</body>
+</html>

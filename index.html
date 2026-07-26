@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expense Tracker</title>
+<link rel="icon"  href="download.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container">
+    <a href="index.html" class="logo">Expense<span class="dot">•</span>Tracker</a>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#faq">FAQ</a>
+      <a href="login.html" class="btn btn-ghost">Log In</a>
+      <a href="signup.html" class="btn btn-primary">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Personal finance, simplified</span>
+      <h1>Take Control of Your Money.</h1>
+      <p class="lede">Track every rupee, spot your spending patterns, and build better money habits — all in one clean dashboard.</p>
+      <div class="hero-cta">
+        <a href="signup.html" class="btn btn-primary">Get Started</a>
+        <a href="#features" class="btn btn-ghost">See how it works</a>
+      </div>
+      <p class="hero-note">Start tracking your expenses today.</p>
+    </div>
+    <div class="ledger-strip">
+      <div class="strip-head"><span>TODAY'S LEDGER</span><span>25 JUL</span></div>
+      <div class="ledger-row">
+        <div class="cat"><span class="tag">🍔</span>Food &amp; Dining</div>
+        <div class="amt out">−₹420</div>
+      </div>
+      <div class="ledger-row">
+        <div class="cat"><span class="tag">💼</span>Freelance Payout</div>
+        <div class="amt in">+₹8,000</div>
+      </div>
+      <div class="ledger-row">
+        <div class="cat"><span class="tag">🚗</span>Travel</div>
+        <div class="amt out">−₹180</div>
+      </div>
+      <div class="ledger-row">
+        <div class="cat"><span class="tag">📚</span>Education</div>
+        <div class="amt out">−₹999</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="features">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Features</span>
+      <h2>Everything you need, nothing you don't.</h2>
+    </div>
+    <div class="grid-3">
+      <div class="feature-card"><div class="ico">💸</div><h3>Expense Tracking</h3><p>Log every expense in seconds and see exactly where your money goes.</p></div>
+      <div class="feature-card"><div class="ico">💰</div><h3>Income Management</h3><p>Add income sources and keep a clear picture of what's coming in.</p></div>
+      <div class="feature-card"><div class="ico">🎯</div><h3>Budget Planning</h3><p>Set limits by category and get a heads-up before you overspend.</p></div>
+      <div class="feature-card"><div class="ico">📊</div><h3>Reports</h3><p>Visual breakdowns of spending by category, week, or month.</p></div>
+      <div class="feature-card"><div class="ico">🔒</div><h3>Secure Login</h3><p>Your financial data, protected behind a simple sign-in.</p></div>
+      <div class="feature-card"><div class="ico">📱</div><h3>Responsive Design</h3><p>Works just as well on your phone as it does on your laptop.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="dashboard" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Dashboard Preview</span>
+      <h2>One dashboard. Your entire financial picture.</h2>
+    </div>
+    <div class="preview-frame">
+      <div class="stat-row">
+        <div class="stat-card"><span class="eyebrow">Balance</span><div class="val">₹24,860</div></div>
+        <div class="stat-card"><span class="eyebrow">Income</span><div class="val" style="color:var(--income)">₹32,000</div></div>
+        <div class="stat-card"><span class="eyebrow">Expenses</span><div class="val" style="color:var(--expense)">₹7,140</div></div>
+        <div class="stat-card"><span class="eyebrow">Savings</span><div class="val">₹9,500</div></div>
+      </div>
+      <div class="ledger-row"><div class="cat"><span class="tag">🛒</span>Shopping</div><div class="amt out">−₹1,240</div></div>
+      <div class="ledger-row"><div class="cat"><span class="tag">💡</span>Bills</div><div class="amt out">−₹2,300</div></div>
+      <div class="ledger-row"><div class="cat"><span class="tag">🎉</span>Entertainment</div><div class="amt out">−₹600</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Why ExpenseFlow</span>
+      <h2>Built to be used daily, not abandoned in a week.</h2>
+    </div>
+    <div class="grid-why">
+      <div class="why-card"><span class="check">✔ EASY</span><p>No spreadsheets, no clutter. Just add and go.</p></div>
+      <div class="why-card"><span class="check">✔ SECURE</span><p>Your data stays yours, always.</p></div>
+      <div class="why-card"><span class="check">✔ FAST</span><p>Built to be lightweight and instant.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Testimonials</span>
+      <h2>People who track smarter.</h2>
+    </div>
+    <div class="grid-test">
+      <div class="test-card"><p class="quote">"ExpenseFlow made me realize how much I was spending on food delivery. Cut it in half in a month."</p><p class="who">— Priya, College Student</p></div>
+      <div class="test-card"><p class="quote">"Finally a tracker that doesn't feel like a finance textbook. Clean and simple."</p><p class="who">— Rahul, Freelancer</p></div>
+      <div class="test-card"><p class="quote">"I use it every payday to plan my month. Genuinely changed how I budget."</p><p class="who">— Anjali, Working Professional</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>Good to know.</h2>
+    </div>
+    <details class="faq-item"><summary>Is ExpenseFlow free to use?</summary><p>Yes, ExpenseFlow is free to get started.</p></details>
+    <details class="faq-item"><summary>Is my data secure?</summary><p>Yes, your data is tied to your login and not shared.</p></details>
+    <details class="faq-item"><summary>Can I use it on mobile?</summary><p>Yes, it's fully responsive.</p></details>
+    <details class="faq-item"><summary>Can I edit or delete a transaction after adding it?</summary><p>Yes, every transaction can be edited or removed anytime.</p></details>
+    <details class="faq-item"><summary>Do I need to install anything?</summary><p>No, it runs entirely in your browser.</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <a href="index.html" class="logo">expense<span class="dot">•</span>flow</a>
+    <div class="footer-links">
+      <a href="#features">Features</a>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    
+    <p class="footer-copy">© 2026 ExpenseFlow. Built with 💙 for smarter spending.</p>
+  </div>
+</footer>
+
+</body>
+</html>

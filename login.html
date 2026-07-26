@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log In — ExpenseTracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="auth-wrap">
+  <div class="auth-card">
+    <a href="index.html" class="logo">Expense<span class="dot">•</span>Tracker</a>
+    <h1 style="margin-top:20px;">Welcome back</h1>
+    <p class="sub">Log in to see your balance.</p>
+
+    <p class="auth-error" id="errorMsg"></p>
+
+    <form id="loginForm">
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" required placeholder="you@example.com">
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" required placeholder="Your password">
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" id="submitBtn">Log In</button>
+    </form>
+
+    <p class="auth-switch">New here? <a href="signup.html">Create an account</a></p>
+  </div>
+</div>
+
+<script src="config.js"></script>
+<script src="script.js"></script>
+<script>
+document.getElementById('loginForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  const errorEl = document.getElementById('errorMsg');
+  errorEl.style.display = 'none';
+  btn.textContent = 'Logging in...';
+  btn.disabled = true;
+
+  const payload = {
+    action: 'login',
+    email: document.getElementById('email').value.trim().toLowerCase(),
+    password: document.getElementById('password').value
+  };
+
+  try {
+    const res = await apiCall(payload);
+    if (res.status === 'ok') {
+      localStorage.setItem('ef_user', JSON.stringify(res.user));
+      window.location.href = 'dashboard.html';
+    } else {
+      errorEl.textContent = res.message || 'Invalid email or password.';
+      errorEl.style.display = 'block';
+    }
+  } catch (err) {
+    errorEl.textContent = 'Something went wrong. Check your API_URL in config.js.';
+    errorEl.style.display = 'block';
+  }
+  btn.textContent = 'Log In';
+  btn.disabled = false;
+});
+</script>
+</body>
+</html>
