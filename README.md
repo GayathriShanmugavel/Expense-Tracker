@@ -100,13 +100,13 @@ Instead of using a traditional database, the application uses **Google Sheets** 
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/expense-tracker.git
+git clone https://github.com/GayathriShanmugavel/Expense-Tracker.git
 ```
 
 ### Navigate to the Project
 
 ```bash
-cd expense-tracker
+cd Expense-Tracker
 ```
 
 ### Run the Project
